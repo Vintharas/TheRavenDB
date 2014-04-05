@@ -5,10 +5,17 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRavenDB.ConsoleSamples", "TheRavenDB.ConsoleSamples\TheRavenDB.ConsoleSamples.csproj", "{BE2C9D32-7272-4C54-A4E9-8157F7EB0172}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRavenDB.CaveAdventure", "TheRavenDB.CaveAdventure\TheRavenDB.CaveAdventure.csproj", "{624C3AB4-7690-47B5-A756-BB6DCE6718FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRavenDB.TextAdventure.Core", "TheRavenDB.TextAdventure.Core\TheRavenDB.TextAdventure.Core.csproj", "{31BC9F62-9B97-4450-B79E-3CD7CE6F8707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRavenDB.TextAdventure.Core.UnitTests", "TheRavenDB.TextAdventure.Core.UnitTests\TheRavenDB.TextAdventure.Core.UnitTests.csproj", "{8374870B-BAE8-4DFD-AAC9-76572F92E3D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleSample", "SimpleSample", "{B379EFBD-0A5A-40B4-BC52-E3A2E2CE43E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaveAdventure", "CaveAdventure", "{736C6B48-A0DB-4CAD-A7A2-B37CAD5F97ED}"
+EndProject
 Global
-	GlobalSection(CodealikeProperties) = postSolution
-		SolutionGuid = eeecf2f3-d8b2-4d8a-9c62-1a3e51fc2ff8
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -18,8 +25,29 @@ Global
 		{BE2C9D32-7272-4C54-A4E9-8157F7EB0172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE2C9D32-7272-4C54-A4E9-8157F7EB0172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE2C9D32-7272-4C54-A4E9-8157F7EB0172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624C3AB4-7690-47B5-A756-BB6DCE6718FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624C3AB4-7690-47B5-A756-BB6DCE6718FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624C3AB4-7690-47B5-A756-BB6DCE6718FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624C3AB4-7690-47B5-A756-BB6DCE6718FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31BC9F62-9B97-4450-B79E-3CD7CE6F8707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BC9F62-9B97-4450-B79E-3CD7CE6F8707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BC9F62-9B97-4450-B79E-3CD7CE6F8707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BC9F62-9B97-4450-B79E-3CD7CE6F8707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8374870B-BAE8-4DFD-AAC9-76572F92E3D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8374870B-BAE8-4DFD-AAC9-76572F92E3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8374870B-BAE8-4DFD-AAC9-76572F92E3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8374870B-BAE8-4DFD-AAC9-76572F92E3D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE2C9D32-7272-4C54-A4E9-8157F7EB0172} = {B379EFBD-0A5A-40B4-BC52-E3A2E2CE43E3}
+		{624C3AB4-7690-47B5-A756-BB6DCE6718FA} = {736C6B48-A0DB-4CAD-A7A2-B37CAD5F97ED}
+		{31BC9F62-9B97-4450-B79E-3CD7CE6F8707} = {736C6B48-A0DB-4CAD-A7A2-B37CAD5F97ED}
+		{8374870B-BAE8-4DFD-AAC9-76572F92E3D1} = {736C6B48-A0DB-4CAD-A7A2-B37CAD5F97ED}
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = eeecf2f3-d8b2-4d8a-9c62-1a3e51fc2ff8
 	EndGlobalSection
 EndGlobal

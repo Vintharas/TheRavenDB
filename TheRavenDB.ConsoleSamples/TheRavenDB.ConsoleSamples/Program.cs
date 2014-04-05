@@ -21,7 +21,6 @@
 
 using System;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using Raven.Client.Document;
 
 namespace TheRavenDB.ConsoleSamples
@@ -34,7 +33,6 @@ namespace TheRavenDB.ConsoleSamples
             {
                 Url = "http://localhost:8080",
                 DefaultDatabase = "test"
-                
             }.Initialize())
             {
                 string companyId;
@@ -103,6 +101,7 @@ namespace TheRavenDB.ConsoleSamples
                 }
 
                 DoAsyncStuff();
+
             }
             
             
@@ -134,7 +133,6 @@ namespace TheRavenDB.ConsoleSamples
 
     }
     }
-
 
 
     public class Company
