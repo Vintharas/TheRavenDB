@@ -12,7 +12,6 @@
  */
 
 using System;
-using System.Collections.Generic;
 using TheRavenDB.TextAdventure.Core.Engine;
 
 namespace TheRavenDB.CaveAdventure
@@ -35,18 +34,32 @@ namespace TheRavenDB.CaveAdventure
 
         private static void RunGame()
         {
-            // Continue with... TextAdventure.Utils to create adventures
-            var caveAdventureGenerator = new CaveAdventureGenerator();
-            caveAdventureGenerator.Generate();
+            GenerateGameIfItDoesntExist();
 
-            // Continue with... ConsoleGameHost to provide gameplay in a console app
             var gameHost = new GameHost();
             var game = gameHost.HostGame();
 
-            game.Load(CaveAdventureGenerator.ColossalCaveAdventure);
-            Console.WriteLine(game.Describe());
-            
-            Console.ReadLine();
+            game.Load(SwenugTextAdventureGenerator.SwenugTextAdventure);
+
+            // TODO: extract to a ConsoleGameHost
+            var action = "";
+            while (action != "q" && action != "quit")
+            {
+                Console.WriteLine(game.Describe());
+                
+                Console.Write("$ ");
+                action = Console.ReadLine();
+                game.PerformAction(action);
+                Console.Clear();
+            }
+
+            Console.WriteLine("\n\nByeeeee!!! :)\n\n");
+        }
+
+        private static void GenerateGameIfItDoesntExist()
+        {
+            var caveAdventureGenerator = new SwenugTextAdventureGenerator();
+            caveAdventureGenerator.Generate();
         }
     }
 }

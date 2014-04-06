@@ -7,5 +7,6 @@ namespace TheRavenDB.TextAdventure.Core.Engine
     {
         void Load(string adventure);
         string Describe();
+        bool PerformAction(string action);
     }
 }

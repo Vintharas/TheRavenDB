@@ -5,19 +5,19 @@ using TheRavenDB.TextAdventure.Utils.Generators;
 
 namespace TheRavenDB.CaveAdventure
 {
-    internal class CaveAdventureGenerator
+    internal class SwenugTextAdventureGenerator
     {
-        public const string ColossalCaveAdventure = "Colossal Cave Adventure";
+        public const string SwenugTextAdventure = "Swenug Text Adventure";
         private readonly IAdventureGenerator adventureGenerator;
 
-        public CaveAdventureGenerator()
+        public SwenugTextAdventureGenerator()
         {
             adventureGenerator = new AdventureGeneratorFactory().Create();
         }
 
         public void Generate()
         {
-            if (adventureGenerator.HasAdventure(ColossalCaveAdventure))
+            if (adventureGenerator.HasAdventure(SwenugTextAdventure))
                 return;
 
             var swenugMeetupRoom = new Room
@@ -26,7 +26,8 @@ namespace TheRavenDB.CaveAdventure
                 Name = "Swenug meeting room at Kvadrat",
                 Description = "Swenug meeting room at Kvadrat",
                 Pathways = new RoomPathways(
-                    new RoomPathway{ Direction = "outside", RoomId = "rooms/2"})
+                    new RoomPathway {Direction = "outside", RoomId = "rooms/2"}),
+                ArbitraryActions = new ArbitraryActions(new ArbitraryAction {Action = "say RavenDB sucks", Response = diedie})
             };
             var corridor = new Room
             {
@@ -34,7 +35,7 @@ namespace TheRavenDB.CaveAdventure
                 Name = "Corridor",
                 Description = "This is the corridor",
                 Pathways = new RoomPathways(
-                    new RoomPathway{ Direction = "inside Swenug Meetup room", RoomId = "rooms/1"})
+                    new RoomPathway {Direction = "inside Swenug Meetup room", RoomId = "rooms/1"})
             };
             var programmersRoom = new Room
             {
@@ -63,7 +64,27 @@ namespace TheRavenDB.CaveAdventure
             var finale = new Room()
             {
                 Id = "rooms/7",
-                Description = @"
+                Description = diedie
+            };
+            adventureGenerator.AddRooms(swenugMeetupRoom, corridor, programmersRoom, cafeteria, toilet, lobby, finale);
+
+            var colossalCaveAdventure = new Adventure
+            {
+                Name = SwenugTextAdventure,
+                Map = new Map {StartingRoom = swenugMeetupRoom}
+            };
+            adventureGenerator.CreateAdventure(colossalCaveAdventure);
+        }
+
+
+
+
+
+
+
+
+
+    private const string diedie = @"
 `.'``````````````````````````````````````````````````````````````````:``+`+``.``````   ""What??!!?"" - A thunderous voice breaks the silence
 .:+`:`;,,,`;:,`,``````````````````````````,:;::,````````````````````````+`+.````````   
 +:.`'.;',;;,::,;```````````````````````,;;:;::::''.````````````````````;':+;``.`````   
@@ -73,7 +94,7 @@ namespace TheRavenDB.CaveAdventure
 ```````````````````````````````.,,,,,,,,,,,,,,,:,,,,,,:'`````````````,.;.``+`.``````    
 ``````````````````````````````.,,,,,,,,..,,,,,,,,,,,,,,;+.````````````..````.```````   A blazing ball of flames materializes and engulfs you.
 `````````````````````````````.,,,,,,,,.......,,,,,,,,,,,;#.`````````````,`,.````````   
-`````````````````````````````,,,,,,...........,,,,,,,,,,,'#`````````````````````````   You die a horrible death.
+`````````````````````````````,,,,,,...........,,,,,,,,,,,'#`````````````````````````   You die a horrible death in agony and pain.
 ````````````````````````````:,,,,,...............,,,,,,,,:+#````````````````````````
 ```````````````````````````:,,,,,,...............,,,,,,,,,;++```````````````````````   R.I.P.
 ```````````````````````````,,,,,,.................,,,,,,,,:'+.``````````````````````
@@ -147,16 +168,8 @@ namespace TheRavenDB.CaveAdventure
 ...........+##############,.#############.:,.+######################################
 ...........##############':,############:.;.+#######################################
 ..........+##############,,############+.;.,########################################
-..........###############,.############.:+.#########################################"
-            };
-            adventureGenerator.AddRooms(swenugMeetupRoom, corridor, programmersRoom, cafeteria, toilet, lobby, finale);
+..........###############,.############.:+.#########################################";
 
-            var colossalCaveAdventure = new Adventure
-            {
-                Name = ColossalCaveAdventure,
-                Map = new Map { StartingRoom = swenugMeetupRoom}
-            };
-            adventureGenerator.CreateAdventure(colossalCaveAdventure);
-        }
     }
+
 }

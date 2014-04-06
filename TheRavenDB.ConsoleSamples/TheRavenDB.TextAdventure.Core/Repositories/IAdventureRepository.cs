@@ -7,5 +7,6 @@ namespace TheRavenDB.TextAdventure.Core.Repositories
     public interface IAdventureRepository
     {
         Room GetAdventureStartingRoom(string adventure);
+        Room GetRoom(string roomId);
     }
 }

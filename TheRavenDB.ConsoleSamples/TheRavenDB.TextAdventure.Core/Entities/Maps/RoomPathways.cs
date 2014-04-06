@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Raven.Abstractions.Extensions;
 
 namespace TheRavenDB.TextAdventure.Core.Entities.Maps
@@ -12,9 +13,6 @@ namespace TheRavenDB.TextAdventure.Core.Entities.Maps
             roomPathway.ForEach(r => this[r.Direction] = r.RoomId);
         }
 
-        public void Add(RoomPathway pathway)
-        {
-            this[pathway.Direction] = pathway.RoomId;
-        }
+        public IEnumerable<string> Exits { get { return this.Select(kv => kv.Key).ToArray(); } }
     }
 }

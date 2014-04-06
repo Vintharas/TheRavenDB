@@ -31,5 +31,13 @@ namespace TheRavenDB.TextAdventure.Core.Repositories
                 }
             }
         }
+
+        public Room GetRoom(string roomId)
+        {
+            using (var session = documentStore.OpenSession())
+            {
+                return session.Load<Room>(roomId);
+            }
+        }
     }
 }
