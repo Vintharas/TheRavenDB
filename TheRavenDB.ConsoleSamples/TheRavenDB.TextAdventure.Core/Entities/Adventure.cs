@@ -1,9 +1,11 @@
-﻿namespace TheRavenDB.TextAdventure.Core.Entities
+﻿using TheRavenDB.TextAdventure.Core.Entities.Maps;
+
+namespace TheRavenDB.TextAdventure.Core.Entities
 {
     public class Adventure
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
-        public Room StartingRoom { get; set;}
+        public Map Map { get; set;}
     }
 }

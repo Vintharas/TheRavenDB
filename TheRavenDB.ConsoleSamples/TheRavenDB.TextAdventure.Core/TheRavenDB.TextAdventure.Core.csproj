@@ -50,7 +50,10 @@
     <Compile Include="Engine\GameHost.cs" />
     <Compile Include="Engine\IGame.cs" />
     <Compile Include="Entities\Adventure.cs" />
-    <Compile Include="Entities\Room.cs" />
+    <Compile Include="Entities\Maps\Map.cs" />
+    <Compile Include="Entities\Maps\Room.cs" />
+    <Compile Include="Entities\Maps\RoomPathway.cs" />
+    <Compile Include="Entities\Maps\RoomPathways.cs" />
     <Compile Include="Exceptions\AdventureNotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AdventureRepository.cs" />

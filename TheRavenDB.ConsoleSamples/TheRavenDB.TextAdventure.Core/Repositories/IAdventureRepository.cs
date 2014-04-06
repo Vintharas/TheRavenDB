@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.Composition;
-using TheRavenDB.TextAdventure.Core.Entities;
+using TheRavenDB.TextAdventure.Core.Entities.Maps;
 
 namespace TheRavenDB.TextAdventure.Core.Repositories
 {

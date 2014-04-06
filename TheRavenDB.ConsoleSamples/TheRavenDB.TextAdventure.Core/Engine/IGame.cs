@@ -6,5 +6,6 @@ namespace TheRavenDB.TextAdventure.Core.Engine
     public interface IGame
     {
         void Load(string adventure);
+        string Describe();
     }
 }

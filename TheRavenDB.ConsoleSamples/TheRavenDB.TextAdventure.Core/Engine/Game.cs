@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.Composition;
-using TheRavenDB.TextAdventure.Core.Entities;
+using TheRavenDB.TextAdventure.Core.Entities.Maps;
 using TheRavenDB.TextAdventure.Core.Repositories;
 
 namespace TheRavenDB.TextAdventure.Core.Engine
@@ -18,6 +18,11 @@ namespace TheRavenDB.TextAdventure.Core.Engine
         public void Load(string adventure)
         {
             CurrentRoom = adventureRepository.GetAdventureStartingRoom(adventure);
+        }
+
+        public string Describe()
+        {
+            return CurrentRoom.Description;
         }
     }
 

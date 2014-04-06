@@ -2,6 +2,7 @@
 using System.Linq;
 using Raven.Client;
 using TheRavenDB.TextAdventure.Core.Entities;
+using TheRavenDB.TextAdventure.Core.Entities.Maps;
 using TheRavenDB.TextAdventure.Core.Exceptions;
 
 namespace TheRavenDB.TextAdventure.Core.Repositories
@@ -25,7 +26,7 @@ namespace TheRavenDB.TextAdventure.Core.Repositories
                     throw new AdventureNotFoundException();
                 else
                 {
-                    var room = session.Load<Room>(adventure.StartingRoom.Id);
+                    var room = session.Load<Room>(adventure.Map.StartingRoom.Id);
                     return room;
                 }
             }

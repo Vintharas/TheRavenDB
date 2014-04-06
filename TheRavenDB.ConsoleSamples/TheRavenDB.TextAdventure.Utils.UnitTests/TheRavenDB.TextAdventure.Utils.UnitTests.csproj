@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{624C3AB4-7690-47B5-A756-BB6DCE6718FA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{33F1D02A-5638-4D0B-BEC0-22C561F17BF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TheRavenDB.CaveAdventure</RootNamespace>
-    <AssemblyName>TheRavenDB.CaveAdventure</AssemblyName>
+    <RootNamespace>TheRavenDB.TextAdventure.Utils.UnitTests</RootNamespace>
+    <AssemblyName>TheRavenDB.TextAdventure.Utils.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,22 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaveAdventureGenerator.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TheRavenDB.TextAdventure.Core\TheRavenDB.TextAdventure.Core.csproj">
-      <Project>{31BC9F62-9B97-4450-B79E-3CD7CE6F8707}</Project>
-      <Name>TheRavenDB.TextAdventure.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TheRavenDB.TextAdventure.Utils\TheRavenDB.TextAdventure.Utils.csproj">
-      <Project>{6C82C68C-3BFB-4536-882D-A2EA13DDFE6A}</Project>
-      <Name>TheRavenDB.TextAdventure.Utils</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
