@@ -43,7 +43,7 @@ namespace TheRavenDB.CaveAdventure
 
             // TODO: extract to a ConsoleGameHost
             var action = "";
-            while (action != "q" && action != "quit")
+            while (action != "q" && action != "quit" && action != "exit")
             {
                 Console.WriteLine(game.Describe());
                 

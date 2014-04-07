@@ -23,57 +23,89 @@ namespace TheRavenDB.CaveAdventure
             var swenugMeetupRoom = new Room
             {
                 Id = "rooms/1",
-                Name = "Swenug meeting room at Kvadrat",
-                Description = "Swenug meeting room at Kvadrat",
+                Name = "Swenug meetup room at Kvadrat",
+                Description = @"
+You find yourself in a well lit room surrounded by distinguished people. Of different appearance and complexions, yet somehow
+sharing the same knowing expression, the same disposition and depth of look of people that has pursued, unrelentlessly, the fleeting
+virtue of wisdom.
+
+Some standing, some sitting, some resting in different corners of the room, they stand, sit and rest listening closely and 
+attentively to yet another one of them, one bald fellow of fair expression that talks... about... RavenDB... 
+
+At the end of the room, in a majestic sign, it reads _Kvadrat_.
+
+****************************************************************************************************
+    Thank you Kvadrat for sponsoring this event!! You've just become immortal! (www.kvadrat.se) 
+****************************************************************************************************
+
+",
                 Pathways = new RoomPathways(
-                    new RoomPathway {Direction = "outside", RoomId = "rooms/2"}),
-                ArbitraryActions = new ArbitraryActions(new ArbitraryAction {Action = "say RavenDB sucks", Response = diedie})
+                    new RoomPathway { Direction = "outside", RoomId = "rooms/2"}),
+                ArbitraryActions = new ArbitraryActions(
+                    new ArbitraryAction {Action = "say RavenDB sucks", Response = diedie},
+                    new ArbitraryAction {Action = "hi", Response = @"The bald figure responds: ""hi traveller, where come you from and what brings you here?"""},
+                    new ArbitraryAction {Action = "grue", Response = @"The bald figure ponders and says: ""...grues... evil creatures those are... You are likely to be eaten by a grue"""}
+                    )
             };
             var corridor = new Room
             {
                 Id = "rooms/2",
                 Name = "Corridor",
-                Description = "This is the corridor",
+                Description = @"
+
+",
                 Pathways = new RoomPathways(
-                    new RoomPathway {Direction = "inside Swenug Meetup room", RoomId = "rooms/1"})
+                    new RoomPathway {Direction = "inside", RoomId = "rooms/1"},
+                    new RoomPathway {Direction = "the dark room", RoomId = "rooms/3"},
+                    new RoomPathway {Direction = "the lobby", RoomId = "rooms/6"},
+                    new RoomPathway {Direction = "the toilet", RoomId = "rooms/4"})
             };
             var programmersRoom = new Room
             {
                 Id = "rooms/3",
-                Name = "Programmer's Room",
-                Description = "Programmers Room"
+                Name = "Programmer's Lair",
+                Description = @"
+",
+                Pathways = new RoomPathways(
+                    new RoomPathway {Direction = "outside", RoomId = "rooms/2"})
             };
             var toilet = new Room
             {
                 Id = "rooms/4",
                 Name = "Toilet",
-                Description = "Toilet"
+                Description = @"
+
+",
+                Pathways = new RoomPathways(
+                    new RoomPathway {Direction = "outside", RoomId = "rooms/2"})
             };
             var cafeteria = new Room
             {
                 Id = "rooms/5",
                 Name = "Cafeteria",
-                Description = "Cafeteria"
+                Description = @"
+
+",
+                Pathways = new RoomPathways(
+                    new RoomPathway {Direction = "outside", RoomId = "rooms/6"})
             };
             var lobby = new Room()
             {
                 Id = "rooms/6",
                 Name = "Lobby",
-                Description = "Lobby"
+                Description = "Lobby",
+                Pathways = new RoomPathways(
+                    new RoomPathway {Direction = "the corridor", RoomId = "rooms/2"},
+                    new RoomPathway {Direction = "cafeteria", RoomId = "rooms/5"})
             };
-            var finale = new Room()
-            {
-                Id = "rooms/7",
-                Description = diedie
-            };
-            adventureGenerator.AddRooms(swenugMeetupRoom, corridor, programmersRoom, cafeteria, toilet, lobby, finale);
+            adventureGenerator.AddRooms(swenugMeetupRoom, corridor, programmersRoom, cafeteria, toilet, lobby);
 
-            var colossalCaveAdventure = new Adventure
+            var swenugTextAdventure = new Adventure
             {
                 Name = SwenugTextAdventure,
                 Map = new Map {StartingRoom = swenugMeetupRoom}
             };
-            adventureGenerator.CreateAdventure(colossalCaveAdventure);
+            adventureGenerator.CreateAdventure(swenugTextAdventure);
         }
 
 

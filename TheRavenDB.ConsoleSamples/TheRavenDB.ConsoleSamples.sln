@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRavenDB.TextAdventure.Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleSample", "SimpleSample", "{B379EFBD-0A5A-40B4-BC52-E3A2E2CE43E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaveAdventure", "CaveAdventure", "{736C6B48-A0DB-4CAD-A7A2-B37CAD5F97ED}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SwenugTextAdventure", "SwenugTextAdventure", "{736C6B48-A0DB-4CAD-A7A2-B37CAD5F97ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRavenDB.TextAdventure.Utils", "TheRavenDB.TextAdventure.Utils\TheRavenDB.TextAdventure.Utils.csproj", "{6C82C68C-3BFB-4536-882D-A2EA13DDFE6A}"
 EndProject
